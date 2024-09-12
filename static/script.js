@@ -1,6 +1,9 @@
-const apiKey = config.apiKey
-const apiSecret = config.apiSecret
-const clientKey = config.clientKey
+// Make sure this is included after config.js in your HTML
+const apiKey = config.apiKey;
+const apiSecret = config.apiSecret;
+const clientKey = config.clientKey;
+
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('Script is running!');

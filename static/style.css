@@ -31,14 +31,14 @@
     background: linear-gradient(270deg,#457b9d, #1d3557cd);
     cursor: pointer;
 }
-#results {
+#movie-results, #music-results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.movie-item {
+.movie-item, .music-item {
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
@@ -47,18 +47,23 @@
     transition: transform 0.2s;
 }
 
-.movie-item:hover {
+.movie-item:hover, .music-item:hover {
     transform: scale(1.25);
 }
 
-.movie-poster {
+.movie-poster, .music-album-art {
     width: 100%;
     height: auto;
 }
 
-.movie-title {
+.movie-title, .music-title, .music-artist {
     padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
     color: #333;
 }
+
+.movie-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+

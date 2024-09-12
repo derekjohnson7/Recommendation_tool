@@ -1,3 +1,7 @@
+const apiKey = config.apiKey
+const apiSecret = config.apiSecret
+const clientKey = config.clientKey
+
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('Script is running!');
     
@@ -11,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const response = await fetch('https://accounts.spotify.com/api/token', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Basic ' + btoa('3430707c0f3245599aebc17e134dbe99:d91daed5a73c4f3bad77b0c4066c8792'),
+                    'Authorization': 'Basic ' + btoa(`${clientKey}:${apiSecret}`),
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: new URLSearchParams({
@@ -51,7 +55,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log('User search input:', query);
             
             // Search for movies
-            fetch(`https://api.themoviedb.org/3/search/movie?api_key=74c13373144fd634675a6aaaac541a4d&query=${query}`)
+            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`)
                 .then(response => response.json())
                 .then(data => {
                     movieResultsDiv.innerHTML = '';
